@@ -47,7 +47,7 @@ var dataArray = [
   {
     title: "Default",
     content:
-      "Lorem impsum dolor yeah I only know three of what? like 34 words? so what I am not a Latin individual its normal",
+      "Lorem impsum yea dolor yeah I only know three of what? like 34 words? so what I am not a Latin individual its normal",
   },
 ];
 
