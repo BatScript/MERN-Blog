@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+
+.create {
+  border: none;
+  background-color: #fa58b6;
+  height: 70px;
+  width: 70px;
+  left: 7vh;
+  top: 85vh;
+  position: fixed;
+  padding: 10px;
+  border-radius: 100%;
+  font-size: 25px;
+  transition: 200ms;
+  box-shadow: inset;
+}
+.blogCardContainer {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.blogCard {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fa58b6;
+}
+
+@media only screen and (max-width: 600px) {
+  .top {
+    left: 70px;
+    grid-template-columns: auto;
+    row-gap: 50px;
+  }
+
+  .searchDiv {
+    margin: auto;
+  }
+}
