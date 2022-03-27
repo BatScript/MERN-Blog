@@ -46,7 +46,13 @@ function Body(props) {
       <h1 className="text-center text-white mt-5">
         Find Your thing! Its all Here I am sure.
       </h1>
-      <div className={topStyles.categories}></div>
+      <div className={topStyles.categories}>
+        <button className={topStyles.movie}>Movies</button>
+        <button className={topStyles.spiritual}>Spiritual</button>
+        <button className={topStyles.lifestyle}>Lifestyle</button>
+        <button className={topStyles.abstract}>Abstract</button>
+        <button className={topStyles.relationship}>Relationships</button>
+      </div>
       {isLoading ? (blogContainer) : (Loader)}
       <Link to="/create">
         <button className={`btn-primary btn-circle ${topStyles.create}`}>

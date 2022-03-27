@@ -28,6 +28,51 @@
   background-color: #fa58b6;
 }
 
+.categories{
+  margin-top: 50px;
+  display: flex;
+  column-gap: 2vh;
+  justify-content: center;
+}
+
+.categories button {
+  transition: 250ms;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 5px;
+  border-style: solid;
+  color: white;
+}
+
+.categories button:hover{
+  transform: scale(1.1);
+}
+
+.categories .movie:hover{
+  background-color: #FC9918;
+  border-color: #FC9918;
+}
+
+.categories .spiritual:hover{
+  background-color: #EF2F88;
+  border-color: #EF2F88;
+}
+
+.categories .lifestyle:hover{
+  background-color: #3F3351;
+  border-color: #3F3351;
+}
+
+.categories .relationship:hover{
+  background-color: #FF3F00;
+  border-color: #FF3F00;
+}
+
+.categories .abstract:hover{
+  background-color: #65C18C;
+  border-color: #65C18C;
+}
+
 @media only screen and (max-width: 600px) {
   .top {
     left: 70px;
