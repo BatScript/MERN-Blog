@@ -10,8 +10,10 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
-
-mongoose.connect("mongodb://localhost:27017/test");
+//mongodb+srv://bibilo:<password>@cluster0.9mefx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongoose.connect(
+  "mongodb+srv://bibilo:mzZo0_299@cluster0.9mefx.mongodb.net/Blogs?retryWrites=true&w=majority"
+);
 
 const { Schema } = mongoose;
 
@@ -46,8 +48,7 @@ app.get("/create", cors(), (req, res) => {
 var dataArray = [
   {
     title: "Default",
-    content:
-      "Lorem impsum yea dolor yeah I only know three of what? like 34 words? so what I am not a Latin individual its normal",
+    content: "Lorem impsum yea dolor y",
   },
 ];
 
@@ -58,13 +59,19 @@ app.post("/submit", async (req, res) => {
   data.title = title;
   data.content = content;
   dataArray.push(data);
+
+  var blog = new newBlog(data);
+  blog.save();
   res.redirect("/blogList");
   // console.log(title, content);
 });
 
 app.get("/blogList", (req, res) => {
-  res.json(dataArray);
-  console.log(dataArray);
+  newBlog.find({}, async (e, f) => {
+    console.log(f);
+    res.json(f);
+  });
+  
 });
 
 // catch 404 and forward to error handler
