@@ -3,8 +3,24 @@
   width: 20vh;
 }
 
-.loaderContainer{
+.loaderContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes smoothOpacity {
+  from {
+    opacity: 0;
+    margin-top: 5px;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+.fadeIn {
+  animation: 200ms smoothOpacity;
 }

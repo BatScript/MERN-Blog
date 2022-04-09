@@ -4,29 +4,22 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
+var dotenv = require('dotenv');
 const mongoose = require("mongoose");
+var blogList = require('./models/createBlog');
+var homePage = require('./controllers/homePageController')
+var categoryFilter = require('./controllers/blogCategoryController')
+var submitBlog = require('./controllers/submitBlogController')
+var search = require('./controllers/searchController')
+
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
-//mongodb+srv://bibilo:<password>@cluster0.9mefx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 mongoose.connect(
   "mongodb+srv://bibilo:mzZo0_299@cluster0.9mefx.mongodb.net/Blogs?retryWrites=true&w=majority"
 );
-
-const { Schema } = mongoose;
-
-const blogSchema = new Schema({
-  img: String,
-  title: String,
-  content: String,
-  tags: [String],
-});
-
-const newBlog = mongoose.model("Blogs", blogSchema);
-// const kitty = new Cat({ name: 'Zildjian' });
-// kitty.save().then(() => console.log('meow'));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -41,38 +34,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
 
-app.get("/create", cors(), (req, res) => {
-  res.send("here, its working now");
-});
+app.post("/submit", submitBlog);
 
-var dataArray = [
-  {
-    title: "Default",
-    content: "Lorem impsum yea dolor y",
-  },
-];
+app.get("/blogList", homePage);
 
-app.post("/submit", async (req, res) => {
-  let title = req.body.title;
-  let content = req.body.content;
-  var data = {};
-  data.title = title;
-  data.content = content;
-  dataArray.push(data);
+app.use('/category', categoryFilter);
 
-  var blog = new newBlog(data);
-  blog.save();
-  res.redirect("/blogList");
-  // console.log(title, content);
-});
-
-app.get("/blogList", (req, res) => {
-  newBlog.find({}, async (e, f) => {
-    console.log(f);
-    res.json(f);
-  });
-  
-});
+app.use('/find', search);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

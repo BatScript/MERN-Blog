@@ -1,0 +1,10 @@
+.subButton{
+    background-color: transparent;
+    color: aliceblue;
+    border-color: #fa58b6;
+    transition: 250ms;
+}
+
+.subButton:hover{
+    background-color: #fa58b6;
+}

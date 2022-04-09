@@ -14,6 +14,7 @@
   transition: 200ms;
   box-shadow: inset;
 }
+
 .blogCardContainer {
   margin: 50px auto;
   display: grid;
@@ -28,7 +29,7 @@
   background-color: #fa58b6;
 }
 
-.categories{
+.categories {
   margin-top: 50px;
   display: flex;
   column-gap: 2vh;
@@ -42,35 +43,50 @@
   padding: 5px;
   border-style: solid;
   color: white;
+  margin: 10px;
 }
 
-.categories button:hover{
+.categories button:hover {
   transform: scale(1.1);
 }
 
-.categories .movie:hover{
+.categories .movie:hover {
   background-color: #FC9918;
   border-color: #FC9918;
 }
 
-.categories .spiritual:hover{
+.categories .spiritual:hover {
   background-color: #EF2F88;
   border-color: #EF2F88;
 }
 
-.categories .lifestyle:hover{
+.categories .lifestyle:hover {
   background-color: #3F3351;
   border-color: #3F3351;
 }
 
-.categories .relationship:hover{
+.categories .relationship:hover {
   background-color: #FF3F00;
   border-color: #FF3F00;
 }
 
-.categories .abstract:hover{
+.categories .abstract:hover {
   background-color: #65C18C;
   border-color: #65C18C;
+}
+
+@keyframes smoothOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: 500ms smoothOpacity;
 }
 
 @media only screen and (max-width: 600px) {
@@ -83,4 +99,13 @@
   .searchDiv {
     margin: auto;
   }
+
+  .categories {
+    display: block;
+  }
+
+  .categories button {
+    margin: 5px;
+  }
+
 }

@@ -8,22 +8,35 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  // const [name, setName] = useState("");
 
   async function postData(content) {
     try {
       await axios.post("/submit", {
         title: content.title,
         content: content.content,
+        tags: content.tags,
+        category: content.category,
+        author: "Mohit"
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
+  }
+
+  const handleSearchresults = async (data) => {
+    var searchQuery = data;
+
+    fetch('/find/' + searchQuery)
+      .then((res) => { return res.json() })
+      .then(async (d) => {
+        // setSearchResult(d);
+        console.log("final : ", d);
+      });
   }
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar searchResults={handleSearchresults} />
       <Routes>
         <Route path="/" element={<Body />}></Route>
 
