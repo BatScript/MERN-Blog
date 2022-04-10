@@ -8,3 +8,22 @@
 .subButton:hover{
     background-color: #fa58b6;
 }
+
+.subButtonDark{
+    background-color: transparent;
+    color: #161D6F;
+    border-color: #161D6F;
+    transition: 250ms;
+}
+
+.subButtonDark:hover{
+    background-color: #161D6F;
+}
+
+.tw{
+    color: white;
+}
+
+.td{
+    color: #161D6F;
+}

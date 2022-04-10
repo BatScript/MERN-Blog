@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
+.tw{
+  color: white;
+}
+
+.td{
+  color: #161D6F;
+}
+
 .create {
+  transition: 300ms;
   border: none;
   background-color: #fa58b6;
   height: 70px;
@@ -11,12 +20,26 @@
   padding: 10px;
   border-radius: 100%;
   font-size: 25px;
-  transition: 200ms;
-  box-shadow: inset;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 10px 20px 0 rgba(0, 0, 0, 0.19);;
+}
+
+.createDark {
+  transition: 300ms;
+  border: none;
+  background-color: #161D6F;
+  height: 70px;
+  width: 70px;
+  left: 7vh;
+  top: 85vh;
+  position: fixed;
+  padding: 10px;
+  border-radius: 100%;
+  font-size: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 10px 20px 0 rgba(0, 0, 0, 0.19);;
 }
 
 .blogCardContainer {
-  margin: 50px auto;
+  margin: 20px auto;
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 10px;
@@ -29,8 +52,14 @@
   background-color: #fa58b6;
 }
 
+.blogCardDark{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #161D6F;
+}
+
 .categories {
-  margin-top: 50px;
+  margin: 30px 0;
   display: flex;
   column-gap: 2vh;
   justify-content: center;
@@ -38,42 +67,114 @@
 
 .categories button {
   transition: 250ms;
-  background-color: transparent;
   border-radius: 20px;
   padding: 5px;
   border-style: solid;
   color: white;
+  border-color: white;
   margin: 10px;
+  background-color: transparent;
 }
 
 .categories button:hover {
   transform: scale(1.1);
+  background-color: #F9D371;
+  color: #161D6F;
+  border-color: #F9D371;
 }
 
-.categories .movie:hover {
-  background-color: #FC9918;
-  border-color: #FC9918;
+.categoriesDark{
+  margin: 30px 0;
+  display: flex;
+  column-gap: 2vh;
+  justify-content: center;
 }
 
-.categories .spiritual:hover {
-  background-color: #EF2F88;
-  border-color: #EF2F88;
+.categoriesDark button {
+  transition: 250ms;
+  border-radius: 20px;
+  padding: 5px;
+  border-style: solid;
+  color: #161D6F;
+  margin: 10px;
+  border-color: #161D6F;
 }
 
-.categories .lifestyle:hover {
-  background-color: #3F3351;
-  border-color: #3F3351;
+.categoriesDark button:hover {
+  transform: scale(1.1);
+  background-color: #161D6F;
+  color: white;
 }
 
-.categories .relationship:hover {
-  background-color: #FF3F00;
-  border-color: #FF3F00;
+.navSubmit {
+  width: 50px;
+  height: 50px;
+  border-color: #fa58b6;
+  background-color: transparent;
+  border-radius: 50px;
+  border-style: solid 2px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
 }
 
-.categories .abstract:hover {
-  background-color: #65C18C;
-  border-color: #65C18C;
+.navSubmitDark {
+  width: 50px;
+  height: 50px;
+  border-color: #161D6F;
+  background-color: transparent;
+  border-radius: 50px;
+  border-style: solid 2px;
+  color: #161D6F;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
 }
+
+.navSubmitDark:hover{
+  background-color: #161D6F;
+  transform: rotate(90deg);
+  color: white;
+}
+
+.navSubmit:hover {
+  background-color: #fa58b6;
+  transform: rotate(90deg);
+}
+
+.navSubmit:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.ml_auto {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.searchInput {
+  padding: 10px;
+  width: 600px;
+  border-radius: 50px !important;
+}
+
+.searchInputDark{
+  padding: 10px;
+  width: 600px;
+  border-radius: 50px !important;
+  border-color: #161D6F !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+}
+
+a:hover {
+  color: aliceblue;
+}
+
+/* .rightAlign {
+  margin-left: auto;
+} */
+
 
 @keyframes smoothOpacity {
   from {
@@ -100,12 +201,25 @@
     margin: auto;
   }
 
-  .categories {
+  .categories, .categoriesDark {
     display: block;
   }
 
-  .categories button {
+  .categories button, .categoriesDark button {
     margin: 5px;
+  }
+
+  .brand {
+    font-size: 4vh;
+    margin-right: 0;
+  }
+
+  .searchInput, .searchInputDark {
+    width: 70%;
+  }
+
+  .ml_auto {
+    margin-top: 20px;
   }
 
 }

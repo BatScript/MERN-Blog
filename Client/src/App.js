@@ -2,12 +2,16 @@ import Navbar from "./components/Navbar/Navbar";
 import Body from "./components/Body/Body";
 import "./App.css";
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CreatePost from "./components/CreatePost/CreatePost";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import ThemeContext from "./contexts/Theme/ThemeContext";
+
 import axios from "axios";
 
 function App() {
+
+  const [searchQuery, setSearchQuery] = useState('');
 
   async function postData(content) {
     try {
@@ -24,34 +28,19 @@ function App() {
   }
 
   const handleSearchresults = async (data) => {
-    var searchQuery = data;
-
-    fetch('/find/' + searchQuery)
-      .then((res) => { return res.json() })
-      .then(async (d) => {
-        // setSearchResult(d);
-        console.log("final : ", d);
-      });
+    setSearchQuery(data);
   }
+  const lightMode = useContext(ThemeContext);
+  var light = lightMode.lightMode;
 
   return (
-    <div className="App">
+    <div className="App" style={light ? { backgroundColor: '#F6F6F6' } : { backgroundColor: '#1a1a40' }}>
       <Navbar searchResults={handleSearchresults} />
       <Routes>
-        <Route path="/" element={<Body />}></Route>
+        <Route path="/" element={<Body searchQueryData={searchQuery} />}></Route>
 
         <Route path="create" element={<CreatePost submit={postData} />}></Route>
       </Routes>
-
-      {/* <form onSubmit={postName} className="form">
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-        />
-        <button type="submit">Sub</button>
-      </form>
-      {home} */}
     </div>
   );
 }

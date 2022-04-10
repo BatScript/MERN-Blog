@@ -1,9 +1,10 @@
-import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import cpStyles from './CreatePost.module.css'
-import Select from 'react-select'
+import ThemeContext from "../../contexts/Theme/ThemeContext";
 const CreatePost = (props) => {
+  const lightMode = useContext(ThemeContext);
+  var light = lightMode.lightMode;
   var navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -19,7 +20,7 @@ const CreatePost = (props) => {
   };
   return (
     <div className="createPost mt-5">
-      <h1 className="text-center text-light">CREATE POST</h1>
+      <h1 className={`text-center ${light ? cpStyles.td : cpStyles.tw}`}>CREATE POST</h1>
       <form className="container" onSubmit={formSubmitHandler}>
         <div className="form-group">
           <input
@@ -63,7 +64,7 @@ const CreatePost = (props) => {
           </div>
         </div>
         <button
-          className={`btn btn-primary mt-4 ml-auto mr-auto ${cpStyles.subButton}`}
+          className={`btn btn-primary mt-4 ml-auto mr-auto ${light ? cpStyles.subButtonDark : cpStyles.subButton}`}
           onClick={() => props.submit({ title: title, content: content, tags: tags, category: category, author: "Mohit" })}
         >
           Submit

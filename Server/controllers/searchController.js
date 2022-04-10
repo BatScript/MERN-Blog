@@ -18,9 +18,6 @@ router.get('/:keyword', async (req, res) => {
             resData.push(val);
         }
     })
-
-    console.log(resData);
-
     res.json(resData);
 })
 
