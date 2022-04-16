@@ -1,5 +1,5 @@
 import topStyles from "./Body.module.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import Loader from '../Loader/Loader';
 import ThemeContext from "../../contexts/Theme/ThemeContext";
@@ -97,13 +97,16 @@ function Body(props) {
   var light = lightMode.lightMode;
 
   var blogContainer = (
-    <div className={` container ${topStyles.blogCardContainer} ${topStyles.fadeIn}`}>
+
+    <div className={` container ${topStyles.blogCardContainer} ${topStyles.fadeIn}`} >
       {blogArray.map((data, i) => (
-        <div className={light ? topStyles.blogCardDark : topStyles.blogCard} key={i}>
-          <h1 className="text-white">{data.title} </h1>
-          <p className="text-white">{data.content.slice(0, 50) + "..."}</p>
-          <p className="text-white">-by {data.author}</p>
-        </div>
+        <Link to={`/test/${data._id}`} style={{ textDecoration: 'none' }} key={data._id}>
+          <div className={light ? topStyles.blogCardDark : topStyles.blogCard} key={i}>
+            <h1 className="text-white">{data.title} </h1>
+            <p className="text-white">{data.content.slice(0, 50) + "..."}</p>
+            <p className="text-white">-by {data.author}</p>
+          </div>
+        </Link>
       ))}
     </div>
   );
@@ -151,6 +154,7 @@ function Body(props) {
           <i className="bi bi-pencil-square"></i>
         </button>
       </Link>
+      <Outlet />
     </div >
   );
 }

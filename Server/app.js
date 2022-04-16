@@ -10,7 +10,8 @@ var blogList = require('./models/createBlog');
 var homePage = require('./controllers/homePageController')
 var categoryFilter = require('./controllers/blogCategoryController')
 var submitBlog = require('./controllers/submitBlogController')
-var search = require('./controllers/searchController')
+var search = require('./controllers/searchController');
+var oneBlog = require('./controllers/oneBlogController');
 
 
 var indexRouter = require("./routes/index");
@@ -41,6 +42,8 @@ app.get("/blogList", homePage);
 app.use('/category', categoryFilter);
 
 app.use('/find', search);
+
+app.use('/oneBlog', oneBlog);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
