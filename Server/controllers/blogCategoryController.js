@@ -1,5 +1,6 @@
 var express = require('express');
-var blogList = require('../models/createBlog');
+var connection = require('../config/dataBase')
+var blogList = connection.models.Blog;
 var router = express.Router();
 
 router.get('/:cat', (req, res) => {

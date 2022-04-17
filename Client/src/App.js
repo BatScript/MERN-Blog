@@ -9,6 +9,8 @@ import ThemeContext from "./contexts/Theme/ThemeContext";
 import BlogContent from "./components/BlogContent/BlogContent";
 
 import axios from "axios";
+import Login from "./components/LoginSignup/Login";
+import SignUp from "./components/LoginSignup/SignUp";
 
 function App() {
 
@@ -45,9 +47,13 @@ function App() {
 
         <Route path="create" element={<CreatePost submit={postData} />}></Route>
 
-        <Route path="test">
+        <Route path="blogContent">
           <Route path=":id" element={<BlogContent />}></Route>
         </Route>
+
+        <Route path="login" element={<Login />}></Route>
+
+        <Route path="signup" element={<SignUp />}></Route>
       </Routes>
     </div>
   );

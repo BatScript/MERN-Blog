@@ -1,4 +1,5 @@
-var blogList = require('../models/createBlog');
+var connection = require('../config/dataBase')
+var blogList = connection.models.Blog;
 
 const submitPost = (req, res) => {
     let title = req.body.title;

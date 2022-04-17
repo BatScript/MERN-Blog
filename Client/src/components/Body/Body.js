@@ -100,7 +100,7 @@ function Body(props) {
 
     <div className={` container ${topStyles.blogCardContainer} ${topStyles.fadeIn}`} >
       {blogArray.map((data, i) => (
-        <Link to={`/test/${data._id}`} style={{ textDecoration: 'none' }} key={data._id}>
+        <Link to={`/blogContent/${data._id}`} style={{ textDecoration: 'none' }} key={data._id}>
           <div className={light ? topStyles.blogCardDark : topStyles.blogCard} key={i}>
             <h1 className="text-white">{data.title} </h1>
             <p className="text-white">{data.content.slice(0, 50) + "..."}</p>

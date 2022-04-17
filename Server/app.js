@@ -4,9 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
-var dotenv = require('dotenv');
-const mongoose = require("mongoose");
-var blogList = require('./models/createBlog');
 var homePage = require('./controllers/homePageController')
 var categoryFilter = require('./controllers/blogCategoryController')
 var submitBlog = require('./controllers/submitBlogController')
@@ -18,9 +15,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
-mongoose.connect(
-  "mongodb+srv://bibilo:mzZo0_299@cluster0.9mefx.mongodb.net/Blogs?retryWrites=true&w=majority"
-);
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

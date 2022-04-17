@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var blogList = require('../models/createBlog');
+var connection = require('../config/dataBase')
+var blogList = connection.models.Blog;
 
 router.get('/:keyword', async (req, res) => {
     var keyword = req.params.keyword;

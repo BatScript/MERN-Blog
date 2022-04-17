@@ -41,9 +41,8 @@
 .blogCardContainer {
   margin: 20px auto;
   display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
 }
 
 .blogCard {
@@ -195,6 +194,10 @@ a:hover {
     left: 70px;
     grid-template-columns: auto;
     row-gap: 50px;
+  }
+
+  .blogCardContainer{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .searchDiv {
