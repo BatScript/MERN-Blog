@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 var dotenv = require('dotenv');
-
-
 const Schema = mongoose.Schema;
 
 const connection = mongoose.createConnection(
@@ -20,15 +19,17 @@ const blogSchema = new Schema({
   author: String
 });
 
-const userSchema = new Schema ({
+const userSchema = new Schema({
   firstName: String,
   lastName: String,
-  email : String,
-  username : String,
+  email: String,
   password: String,
-  likedPosts : [String]
+  likedPosts: [String]
 })
 
+userSchema.plugin(passportLocalMongoose);
+
 const Blog = connection.model("Blog", blogSchema);
-const User = connection.model("USER", userSchema);
+const User = connection.model("User", userSchema);
+
 module.exports = connection;

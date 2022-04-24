@@ -29,3 +29,25 @@
   height: 2em;
   width: 2em;;
 }
+
+.mla{
+  margin-left: auto;
+}
+
+.login{
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.login span{
+  font-size: 0;
+  transition: 200ms;
+}
+
+.login:hover.login span{
+  font-size: 1rem;
+}
