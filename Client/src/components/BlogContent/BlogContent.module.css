@@ -1,4 +1,59 @@
 .blogContent{
-    width: 80vw;
-    margin: 50px auto;
+    width: 90vw;
+    color: #1F4690;
+}
+
+.shareContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-left: auto;
+    padding: 0 50px 0 0;
+}
+
+.OneBlog{
+    margin: 50px;
+    display: flex;
+}
+
+.title{
+    font-size: 4rem !important;
+    text-transform: capitalize;
+}
+
+.capitalise{
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .blogContent{
+        overflow: auto;
+        padding: 5px;
+    }
+
+    .title{
+        font-size: 3rem !important;
+    }
+
+    .OneBlog{
+        flex-direction: column;
+        margin: 0;
+        text-overflow: clip;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shareContainer{
+        flex-direction: row;
+        column-gap: 100px;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        margin-right: auto;
+        background-color: #FFA500;
+        padding: 10px;
+        width: 100%;
+        bottom: 0;
+    }
 }

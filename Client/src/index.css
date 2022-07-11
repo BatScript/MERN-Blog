@@ -1,11 +1,23 @@
 body {
-  background-color: #1a1a40;
   margin: 0;
   transition: 200ms;
   /* overflow: hidden; */
 }
 
+body::-webkit-scrollbar {
+  display: none !important;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a:-webkit-any-link {
+  text-decoration: none !important;
 }

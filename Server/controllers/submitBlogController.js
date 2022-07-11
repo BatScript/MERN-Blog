@@ -12,7 +12,7 @@ const submitPost = (req, res) => {
     data.title = title.toLowerCase();
     data.content = content.toLowerCase();
     data.author = author.toLowerCase();
-    data.tags = [tags.toLowerCase()];
+    data.tags = tags;
     data.category = category.toLowerCase();
 
     var blog = new blogList(data);

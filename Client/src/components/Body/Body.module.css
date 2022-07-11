@@ -1,35 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
-.tw{
-  color: white;
+.bodyContainerLight{
+  background-color: #FFE5B4;
 }
 
-.td{
-  color: #161D6F;
+.bodyContainerDark {
+  background-color: #161D6F;
 }
 
 .create {
   transition: 300ms;
   border: none;
-  background-color: #fa58b6;
-  height: 70px;
-  width: 70px;
-  left: 7vh;
-  top: 85vh;
-  position: fixed;
-  padding: 10px;
-  border-radius: 100%;
-  font-size: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 10px 20px 0 rgba(0, 0, 0, 0.19);;
-}
-
-.createDark {
-  transition: 300ms;
-  border: none;
   background-color: #161D6F;
-  height: 70px;
-  width: 70px;
-  left: 7vh;
+  height: 60px;
+  width: 60px;
+  left: 5vw;
   top: 85vh;
   position: fixed;
   padding: 10px;
@@ -43,19 +28,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
+  text-decoration: none;
 }
 
-.blogCard {
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #fa58b6;
-}
-
-.blogCardDark{
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #161D6F;
-}
 
 .categories {
   margin: 30px 0;
@@ -69,24 +44,8 @@
   border-radius: 20px;
   padding: 5px;
   border-style: solid;
-  color: white;
-  border-color: white;
   margin: 10px;
   background-color: transparent;
-}
-
-.categories button:hover {
-  transform: scale(1.1);
-  background-color: #F9D371;
-  color: #161D6F;
-  border-color: #F9D371;
-}
-
-.categoriesDark{
-  margin: 30px 0;
-  display: flex;
-  column-gap: 2vh;
-  justify-content: center;
 }
 
 .categoriesDark button {
@@ -94,7 +53,6 @@
   border-radius: 20px;
   padding: 5px;
   border-style: solid;
-  color: #161D6F;
   margin: 10px;
   border-color: #161D6F;
 }
@@ -106,38 +64,22 @@
 }
 
 .navSubmit {
+  color: #1F4690 !important;
   width: 50px;
   height: 50px;
-  border-color: #fa58b6;
+  border-color: #1F4690;
   background-color: transparent;
   border-radius: 50px;
-  border-style: solid 2px;
+  border-style: solid;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 200ms;
-}
-
-.navSubmitDark {
-  width: 50px;
-  height: 50px;
-  border-color: #161D6F;
-  background-color: transparent;
-  border-radius: 50px;
-  border-style: solid 2px;
-  color: #161D6F;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: 200ms;
-}
-
-.navSubmitDark:hover{
-  background-color: #161D6F;
-  transform: rotate(90deg);
-  color: white;
 }
 
 .navSubmit:hover {
-  background-color: #fa58b6;
+  background-color: #1F4690;
   transform: rotate(90deg);
+  color: white !important;
 }
 
 .navSubmit:active {
@@ -155,19 +97,19 @@
   padding: 10px;
   width: 600px;
   border-radius: 50px !important;
-}
-
-.searchInputDark{
-  padding: 10px;
-  width: 600px;
-  border-radius: 50px !important;
-  border-color: #161D6F !important;
-  border-style: solid !important;
-  border-width: 2px !important;
+  border: 2px solid #1F4690;
 }
 
 a:hover {
   color: aliceblue;
+}
+
+.capitalise{
+  text-transform: capitalize;
+}
+
+.goIcon{
+  font-size: 40px;
 }
 
 /* .rightAlign {
@@ -189,7 +131,16 @@ a:hover {
   animation: 500ms smoothOpacity;
 }
 
+.Link{
+  color:#161D6F;
+}
+
+.Link:hover{
+  color:#161D6F;
+}
+
 @media only screen and (max-width: 600px) {
+  
   .top {
     left: 70px;
     grid-template-columns: auto;
@@ -198,6 +149,7 @@ a:hover {
 
   .blogCardContainer{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 100px !important;
   }
 
   .searchDiv {
@@ -223,6 +175,11 @@ a:hover {
 
   .ml_auto {
     margin-top: 20px;
+  }
+
+  .create{
+    left: 5vw;
+    top: 90vh;
   }
 
 }

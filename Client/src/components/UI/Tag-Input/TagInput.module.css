@@ -1,0 +1,51 @@
+.listContainer{
+    display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	min-height: 38px;
+	width: 480px;
+	padding: 0 8px;
+	border-radius: 20px;
+    background-color: #fff;
+    width: 100%;
+    border: 2px solid #161D6F;
+
+}
+
+.listContainer li{
+    margin: 5px;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    column-gap: 5px;
+    padding: 2px;
+}
+
+.tagName{
+    margin: 0 0 0 5px;
+}
+
+.tagInput {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border:  #ced4da;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.tagInput:focus{
+    outline: none;
+}

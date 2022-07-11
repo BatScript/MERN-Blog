@@ -1,3 +1,7 @@
+.heading{
+    color:#161D6F;
+}
+
 .subButton{
     background-color: transparent;
     color: aliceblue;
@@ -26,4 +30,41 @@
 
 .td{
     color: #161D6F;
+}
+
+.tagsAndType{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.selectOps{
+    border: 2px solid #161D6F;
+    border-radius: 20px;
+}
+
+.selectOpsContainer{
+    margin-left: 10px;
+    width: 30%;
+    height: auto;
+}
+
+.titleInput{
+    width: 70%;
+    border: 2px solid #161D6F;
+    border-radius: 50px;
+}
+
+.contentInput{
+    border: 2px solid #161D6F;
+    border-radius: 20px;
+}
+
+.tags{
+    border: 2px solid #161D6F;
+    border-radius: 20px;
+}
+
+.tags input{
+    border-radius: 10px;
 }

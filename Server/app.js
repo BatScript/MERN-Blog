@@ -9,12 +9,12 @@ var categoryFilter = require('./controllers/blogCategoryController')
 var submitBlog = require('./controllers/submitBlogController')
 var search = require('./controllers/searchController');
 var oneBlog = require('./controllers/oneBlogController');
-var loginRoute = require('./routes/signin');
-var signupRoute = require('./routes/signup');
-var Auth = require('./middleware/auth');
+// var loginRoute = require('./routes/signin');
+// var signupRoute = require('./routes/signup');
+// var Auth = require('./middleware/auth');
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+// var usersRouter = require("./routes/users");
 
 var app = express();
 
@@ -30,9 +30,9 @@ app.use(cookieParser());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/users", usersRouter);
+// app.use("/users", usersRouter);
 
-app.post("/submit", Auth, submitBlog);
+app.post("/submit", submitBlog);
 
 app.get("/blogList", homePage);
 
@@ -42,9 +42,9 @@ app.use('/find', search);
 
 app.use('/oneBlog', oneBlog);
 
-app.use('/login', loginRoute);
+// app.use('/login', loginRoute);
 
-app.use('/signup', signupRoute);
+// app.use('/signup', signupRoute);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
