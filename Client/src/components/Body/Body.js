@@ -5,12 +5,11 @@ import Footer from "../Footer/Footer";
 import { useState, useEffect } from "react";
 import Loader from "../Loader/Loader";
 import Card from "../UI/Card/Card";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "../Common/CSS/common.css";
 
 const Body = () => {
-
-  const isDark = useSelector((state) => state.theme.isDark)
+  const isDark = useSelector((state) => state.theme.isDark);
 
   const [blogArray, setBlogArray] = useState([]);
 
@@ -50,36 +49,33 @@ const Body = () => {
     }
   };
 
-  useEffect(
-    () => {
-      const triggerApi = async () => {
-        setIsLoading(false);
-        setMessage(false);
-        fetch("https://blomo.herokuapp.com/blogList", {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
+  useEffect(() => {
+    const triggerApi = async () => {
+      setIsLoading(false);
+      setMessage(false);
+      fetch("https://blomo.herokuapp.com/blogList", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then(function (response) {
+          return response.json();
         })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            setBlogArray(data);
-            setIsLoading(true);
-            if (data.length === 0) {
-              setMessage(true);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      };
+        .then(function (data) {
+          setBlogArray(data);
+          setIsLoading(true);
+          if (data.length === 0) {
+            setMessage(true);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
 
-      triggerApi();
-    },
-    [location]
-  );
+    triggerApi();
+  }, [location]);
 
   const categoryButtons = async (type) => {
     setIsLoading(false);
@@ -104,12 +100,34 @@ const Body = () => {
       className={` container ${topStyles.blogCardContainer} ${topStyles.fadeIn}`}
     >
       {blogArray.map((data, i) => (
-        <Link className={topStyles.Link} to={`/blogContent/${data._id}`} key={data._id}>
+        <Link
+          className={topStyles.Link}
+          to={`/blogContent/${data._id}`}
+          key={data._id}
+        >
           <Card>
-            <h1 className={`${topStyles.capitalise} ${isDark ? "blomo_text_light" : "blomo_text_dark"}`}>{data.title}</h1>
-            <p className={`${isDark ? "blomo_text_light" : "blomo_text_dark"}`}>{data.content.slice(0, 50) + "..."}</p>
-            <p className={`${topStyles.capitalise} ${isDark ? "blomo_text_light" : "blomo_text_dark"}`}>-by {data.author}</p>
-            <span className={`material-symbols-outlined ${topStyles.goIcon} ${isDark ? "blomo_text_light" : "blomo_text_dark"}`}>
+            <h1
+              className={`${topStyles.capitalise} ${
+                isDark ? "blomo_text_light" : "blomo_text_dark"
+              }`}
+            >
+              {data.title}
+            </h1>
+            <p className={`${isDark ? "blomo_text_light" : "blomo_text_dark"}`}>
+              {data.content.slice(0, 50) + "..."}
+            </p>
+            <p
+              className={`${topStyles.capitalise} ${
+                isDark ? "blomo_text_light" : "blomo_text_dark"
+              }`}
+            >
+              -by {data.author}
+            </p>
+            <span
+              className={`material-symbols-outlined ${topStyles.goIcon} ${
+                isDark ? "blomo_text_light" : "blomo_text_dark"
+              }`}
+            >
               arrow_circle_right
             </span>
           </Card>
@@ -119,16 +137,22 @@ const Body = () => {
   );
 
   var emptyMessage = (
-    <h1
-      className={`text-center ${topStyles.fadeIn}`}
-    >
+    <h1 className={`text-center ${topStyles.fadeIn}`}>
       Sometimes we should switch out of zone, to know world better! 😊
     </h1>
   );
 
   return (
-    <div className={ isDark ? topStyles.bodyContainerLight : topStyles.bodyContainerDark}>
-      <h1 className={`text-center ${isDark ? "blomo_text_light" : "blomo_text_dark"}`}>
+    <div
+      className={
+        isDark ? topStyles.bodyContainerLight : topStyles.bodyContainerDark
+      }
+    >
+      <h1
+        className={`text-center ${
+          isDark ? "blomo_text_light" : "blomo_text_dark"
+        }`}
+      >
         <b>Welcome to Blomo.</b>
       </h1>
 
@@ -138,14 +162,20 @@ const Body = () => {
       >
         <input
           value={searchQuery}
-          className={`form-control me-2 ${topStyles.searchInput}`}
+          className={`form-control me-2 ${topStyles.searchInput} ${
+            isDark ? "blomo_border_light" : "blomo_border_dark"
+          }`}
           type="search"
           placeholder="Search"
           aria-label="Search"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button
-          className={topStyles.navSubmit}
+          className={`${topStyles.navSubmit} ${
+            isDark
+              ? "blomo_border_light blomo_text_light"
+              : "blomo_border_dark blomo_text_dark"
+          }`}
           type="submit"
           onClick={handleSearch}
         >
@@ -156,31 +186,51 @@ const Body = () => {
       <div className={topStyles.categories}>
         <button
           onClick={() => categoryButtons("movies")}
-          className={`${topStyles.movie} ${isDark ? "blomo_text_light blomo_border_light" : "blomo_text_dark blomo_border_dark"}`}
+          className={`${topStyles.movie} ${
+            isDark
+              ? "blomo_text_light blomo_border_light"
+              : "blomo_text_dark blomo_border_dark"
+          }`}
         >
           Movies
         </button>
         <button
           onClick={() => categoryButtons("spiritual")}
-          className={`${topStyles.spiritual} ${isDark ? "blomo_text_light blomo_border_light" : "blomo_text_dark blomo_border_dark"}`}
+          className={`${topStyles.spiritual} ${
+            isDark
+              ? "blomo_text_light blomo_border_light"
+              : "blomo_text_dark blomo_border_dark"
+          }`}
         >
           Spiritual
         </button>
         <button
           onClick={() => categoryButtons("lifestyle")}
-          className={`${topStyles.lifestyle} ${isDark ? "blomo_text_light blomo_border_light" : "blomo_text_dark blomo_border_dark"}`}
+          className={`${topStyles.lifestyle} ${
+            isDark
+              ? "blomo_text_light blomo_border_light"
+              : "blomo_text_dark blomo_border_dark"
+          }`}
         >
           Lifestyle
         </button>
         <button
           onClick={() => categoryButtons("abstract")}
-          className={`${topStyles.abstract} ${isDark ? "blomo_text_light blomo_border_light" : "blomo_text_dark blomo_border_dark"}`}
+          className={`${topStyles.abstract} ${
+            isDark
+              ? "blomo_text_light blomo_border_light"
+              : "blomo_text_dark blomo_border_dark"
+          }`}
         >
           Abstract
         </button>
         <button
           onClick={() => categoryButtons("relationships")}
-          className={`${topStyles.relationship} ${isDark ? "blomo_text_light blomo_border_light" : "blomo_text_dark blomo_border_dark"}`}
+          className={`${topStyles.relationship} ${
+            isDark
+              ? "blomo_text_light blomo_border_light"
+              : "blomo_text_dark blomo_border_dark"
+          }`}
         >
           Relationships
         </button>
@@ -189,9 +239,7 @@ const Body = () => {
       {isLoading ? blogContainer : Loader}
       {message && emptyMessage}
       <Link to="/create">
-        <button
-          className={`btn-primary btn-circle ${topStyles.create}`}
-        >
+        <button className={`btn-primary btn-circle ${topStyles.create}`}>
           <i className="bi bi-pencil-square"></i>
         </button>
       </Link>
@@ -199,6 +247,6 @@ const Body = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default Body;

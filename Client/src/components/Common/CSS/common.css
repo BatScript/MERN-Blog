@@ -1,15 +1,23 @@
-.blomo_text_light{
-    color: #1F4690;
+.blomo_text_light {
+  color: #1f4690 !important;
 }
 
-.blomo_text_dark{
-    color: #FFE5B4;
+.blomo_text_dark {
+  color: #ffe5b4 !important;
 }
 
-.blomo_border_light{
-    border-color: #1F4690;
+.blomo_border_light {
+  border-color: #1f4690;
 }
 
-.blomo_border_dark{
-    border-color: #FFE5B4;
+.blomo_border_dark {
+  border-color: #ffe5b4;
+}
+
+.blomo_bg_dark {
+  background-color: #161d6f !important;
+}
+
+.blomo_bg_light {
+  background-color: #ffe5b4 !important;
 }

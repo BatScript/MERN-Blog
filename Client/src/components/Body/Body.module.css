@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
-.bodyContainerLight{
-  background-color: #FFE5B4;
+.bodyContainerLight {
+  background-color: #ffe5b4;
 }
 
 .bodyContainerDark {
-  background-color: #161D6F;
+  background-color: #161d6f;
 }
 
 .create {
   transition: 300ms;
   border: none;
-  background-color: #161D6F;
+  background-color: #161d6f;
   height: 60px;
   width: 60px;
   left: 5vw;
@@ -20,7 +20,7 @@
   padding: 10px;
   border-radius: 100%;
   font-size: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 10px 20px 0 rgba(0, 0, 0, 0.19);;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .blogCardContainer {
@@ -30,7 +30,6 @@
   gap: 20px;
   text-decoration: none;
 }
-
 
 .categories {
   margin: 30px 0;
@@ -54,32 +53,26 @@
   padding: 5px;
   border-style: solid;
   margin: 10px;
-  border-color: #161D6F;
+  border-color: #161d6f;
 }
 
 .categoriesDark button:hover {
   transform: scale(1.1);
-  background-color: #161D6F;
+  background-color: #161d6f;
   color: white;
 }
 
 .navSubmit {
-  color: #1F4690 !important;
   width: 50px;
   height: 50px;
-  border-color: #1F4690;
   background-color: transparent;
   border-radius: 50px;
   border-style: solid;
-  color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 200ms;
 }
 
 .navSubmit:hover {
-  background-color: #1F4690;
   transform: rotate(90deg);
-  color: white !important;
 }
 
 .navSubmit:active {
@@ -97,25 +90,24 @@
   padding: 10px;
   width: 600px;
   border-radius: 50px !important;
-  border: 2px solid #1F4690;
+  border: 2px solid #1f4690;
 }
 
 a:hover {
   color: aliceblue;
 }
 
-.capitalise{
+.capitalise {
   text-transform: capitalize;
 }
 
-.goIcon{
+.goIcon {
   font-size: 40px;
 }
 
 /* .rightAlign {
   margin-left: auto;
 } */
-
 
 @keyframes smoothOpacity {
   from {
@@ -131,23 +123,22 @@ a:hover {
   animation: 500ms smoothOpacity;
 }
 
-.Link{
-  color:#161D6F;
+.Link {
+  color: #161d6f;
 }
 
-.Link:hover{
-  color:#161D6F;
+.Link:hover {
+  color: #161d6f;
 }
 
 @media only screen and (max-width: 600px) {
-  
   .top {
     left: 70px;
     grid-template-columns: auto;
     row-gap: 50px;
   }
 
-  .blogCardContainer{
+  .blogCardContainer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-bottom: 100px !important;
   }
@@ -156,11 +147,13 @@ a:hover {
     margin: auto;
   }
 
-  .categories, .categoriesDark {
+  .categories,
+  .categoriesDark {
     display: block;
   }
 
-  .categories button, .categoriesDark button {
+  .categories button,
+  .categoriesDark button {
     margin: 5px;
   }
 
@@ -169,7 +162,8 @@ a:hover {
     margin-right: 0;
   }
 
-  .searchInput, .searchInputDark {
+  .searchInput,
+  .searchInputDark {
     width: 70%;
   }
 
@@ -177,9 +171,8 @@ a:hover {
     margin-top: 20px;
   }
 
-  .create{
+  .create {
     left: 5vw;
     top: 90vh;
   }
-
 }
