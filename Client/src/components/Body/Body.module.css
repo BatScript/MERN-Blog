@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
-.bodyContainerLight {
-  background-color: #ffe5b4;
-}
-
-.bodyContainerDark {
-  background-color: #161d6f;
+.bodyContainer {
+  min-height: 50vh;
 }
 
 .create {
@@ -29,6 +25,7 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   text-decoration: none;
+  min-height: 50vh;
 }
 
 .categories {

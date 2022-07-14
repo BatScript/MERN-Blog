@@ -6,21 +6,27 @@ import { Routes, Route } from "react-router-dom";
 import CreatePost from "./components/CreatePost/CreatePost";
 import { useState } from "react";
 import BlogContent from "./components/BlogContent/BlogContent";
+import "../src/components/Common/CSS/common.css";
+import { useSelector } from "react-redux";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const [searchQuery, setSearchQuery] = useState('');
+  var isDark = useSelector((state) => state.theme.isDark);
 
   const handleSearchresults = async (data) => {
     setSearchQuery(data);
-  }
+  };
 
   return (
-    <div className="App">
+    <div className={`App ${isDark ? "blomo_bg_light" : "blomo_bg_dark"}`}>
       <Navbar searchResults={handleSearchresults} />
       <Routes>
-        <Route path="/" element={<Body searchQueryData={searchQuery} />}></Route>
+        <Route
+          path="/"
+          element={<Body searchQueryData={searchQuery} />}
+        ></Route>
 
         <Route path="create" element={<CreatePost />}></Route>
 

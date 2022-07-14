@@ -1,3 +1,7 @@
+* {
+  transition: 200ms;
+}
+
 .blomo_text_light {
   color: #1f4690 !important;
 }
@@ -7,11 +11,11 @@
 }
 
 .blomo_border_light {
-  border-color: #1f4690;
+  border-color: #1f4690 !important;
 }
 
 .blomo_border_dark {
-  border-color: #ffe5b4;
+  border-color: #ffe5b4 !important;
 }
 
 .blomo_bg_dark {

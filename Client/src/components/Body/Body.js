@@ -144,9 +144,10 @@ const Body = () => {
 
   return (
     <div
-      className={
-        isDark ? topStyles.bodyContainerLight : topStyles.bodyContainerDark
-      }
+      className={`
+        ${topStyles.bodyContainer} 
+        ${isDark ? "blomo_bg_light" : "blomo_bg_dark"}
+      `}
     >
       <h1
         className={`text-center ${
@@ -239,7 +240,13 @@ const Body = () => {
       {isLoading ? blogContainer : Loader}
       {message && emptyMessage}
       <Link to="/create">
-        <button className={`btn-primary btn-circle ${topStyles.create}`}>
+        <button
+          className={`btn-primary btn-circle ${topStyles.create} ${
+            isDark
+              ? "blomo_bg_dark blomo_text_dark"
+              : "blomo_bg_light blomo_text_light"
+          }`}
+        >
           <i className="bi bi-pencil-square"></i>
         </button>
       </Link>

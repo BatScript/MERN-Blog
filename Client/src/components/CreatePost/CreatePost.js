@@ -1,24 +1,26 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import cpStyles from './CreatePost.module.css'
+import cpStyles from "./CreatePost.module.css";
 import TagInput from "../UI/Tag-Input/TagInput";
 import axios from "axios";
 import Footer from "../Footer/Footer";
+import { useSelector } from "react-redux";
+import "../Common/CSS/common.css";
 const CreatePost = (props) => {
   var navigate = useNavigate();
+  var isDark = useSelector((state) => state.theme.isDark);
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState([]);
 
-  const selectedTags = tags => {
-		setTags(tags);
-	};
-
+  const selectedTags = (tags) => {
+    setTags(tags);
+  };
 
   const formSubmitHandler = async (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       return false;
     }
@@ -26,27 +28,32 @@ const CreatePost = (props) => {
     e.preventDefault();
     try {
       await axios({
-        method: 'POST',
+        method: "POST",
         url: "https://blomo.herokuapp.com/submit",
         data: {
           title,
           content,
           tags,
           category,
-          author: "Mohit"
-        }
+          author: "Mohit",
+        },
       });
       navigate("/");
     } catch (error) {
       console.log(error);
-      alert('Check err');
+      alert("Check err");
     }
-    
   };
   return (
-    <React.Fragment>
-    <div className="container createPost mt-5">
-      <h1 className={`text-center ${cpStyles.heading}`}>CREATE POST</h1>
+    <div className={isDark ? "blomo_bg_light" : "blomo_bg_dark"}>
+      <div className={`container createPost`}>
+        <h1
+          className={`text-center ${cpStyles.heading} ${
+            isDark ? "blomo_text_light" : "blomo_text_dark"
+          }`}
+        >
+          CREATE POST
+        </h1>
         <div className="form-group d-flex">
           <input
             value={title}
@@ -57,7 +64,12 @@ const CreatePost = (props) => {
             placeholder="Title"
           />
           <div className={`${cpStyles.selectOpsContainer}`}>
-            <select value={category} onChange={(e) => setCategory(e.target.value)} className={`form-select ${cpStyles.selectOps}`} aria-label="Default select example">
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className={`form-select ${cpStyles.selectOps}`}
+              aria-label="Default select example"
+            >
               <option defaultValue="category">Category</option>
               <option value="movies">Movies</option>
               <option value="spiritual">Spiritual</option>
@@ -78,7 +90,11 @@ const CreatePost = (props) => {
           ></textarea>
         </div>
         <div className={cpStyles.tagsAndType}>
-          <TagInput className={cpStyles.tags} selectedTags={selectedTags} tags={['Life']} />
+          <TagInput
+            className={cpStyles.tags}
+            selectedTags={selectedTags}
+            tags={["Life"]}
+          />
         </div>
         <button
           onClick={formSubmitHandler}
@@ -87,10 +103,9 @@ const CreatePost = (props) => {
         >
           Submit
         </button>
-        
+      </div>
+      <Footer />
     </div>
-    <Footer />
-    </React.Fragment>
   );
 };
 
