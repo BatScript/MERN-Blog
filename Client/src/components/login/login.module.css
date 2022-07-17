@@ -1,0 +1,90 @@
+.loginpage {
+  max-width: 400px;
+  margin: auto;
+  z-index: 5;
+}
+
+.shapesHolder {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.formInput {
+  padding: 5px;
+  width: 100%;
+  margin: 5px auto;
+}
+
+.button {
+  width: 100%;
+  background-color: #ca4e79;
+  border: none;
+  margin-top: 5px;
+  color: aliceblue;
+  padding: 5px;
+  animation: forwards;
+  box-shadow: 4px 1px 18px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 1px 18px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 1px 18px -1px rgba(0, 0, 0, 0.75);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.formContainer {
+  margin-top: 100px;
+}
+
+.loginWith {
+  margin: 10px auto 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  box-shadow: 4px 1px 18px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 1px 18px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 1px 18px -1px rgba(0, 0, 0, 0.75);
+}
+
+.otherLoginContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.text a {
+  color: inherit;
+  text-decoration: underline !important;
+}
+
+@keyframes rect {
+  from {
+    left: -50%;
+  }
+  to {
+    left: -20%;
+  }
+}
+
+.rectangleone {
+  width: 500px;
+  height: 500px;
+  background-color: #ca4e79;
+  transition: 200ms;
+  left: -30%;
+  transform: rotate(45deg);
+  animation: rect 200ms;
+  bottom: 0;
+  top: 300px;
+}

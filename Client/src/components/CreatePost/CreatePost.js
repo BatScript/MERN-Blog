@@ -29,7 +29,7 @@ const CreatePost = (props) => {
     try {
       await axios({
         method: "POST",
-        url: "https://blomo.herokuapp.com/submit",
+        url: "/submit",
         data: {
           title,
           content,

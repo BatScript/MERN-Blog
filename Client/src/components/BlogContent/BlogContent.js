@@ -14,7 +14,7 @@ const BlogContent = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://blomo.herokuapp.com/oneBlog/" + params.id)
+    fetch("/oneBlog/" + params.id)
       .then(function (res) {
         return res.json();
       })

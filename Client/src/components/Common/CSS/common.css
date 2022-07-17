@@ -1,27 +1,27 @@
 * {
-  transition: 200ms;
+  transition: 200ms ease;
 }
 
 .blomo_text_light {
-  color: #1f4690 !important;
+  color: #513252 !important;
 }
 
 .blomo_text_dark {
-  color: #ffe5b4 !important;
+  color: #ffc18e !important;
 }
 
 .blomo_border_light {
-  border-color: #1f4690 !important;
+  border-color: #513252 !important;
 }
 
 .blomo_border_dark {
-  border-color: #ffe5b4 !important;
+  border-color: #ffc18e !important;
 }
 
 .blomo_bg_dark {
-  background-color: #161d6f !important;
+  background-color: #513252 !important;
 }
 
 .blomo_bg_light {
-  background-color: #ffe5b4 !important;
+  background-color: #ffc18e !important;
 }

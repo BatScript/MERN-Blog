@@ -1,5 +1,6 @@
-.card{
-    border: 2px solid;
-    padding: 10px;
-    border-color: #1F4690;
+.card {
+  border: 2px solid;
+  padding: 10px;
+  border-color: #1f4690;
+  z-index: 1;
 }

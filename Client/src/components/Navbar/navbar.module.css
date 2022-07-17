@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
+.nav {
+  z-index: 1;
+}
+
 .brand {
   margin-right: 100px;
   text-decoration: none !important;

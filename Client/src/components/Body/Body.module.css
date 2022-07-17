@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
-.bodyContainer {
-  min-height: 50vh;
-}
-
 .create {
   transition: 300ms;
   border: none;
@@ -88,6 +84,7 @@
   width: 600px;
   border-radius: 50px !important;
   border: 2px solid #1f4690;
+  background-color: transparent;
 }
 
 a:hover {

@@ -5,3 +5,7 @@
 .form {
   margin-top: 200px;
 }
+
+.loginOverflow {
+  overflow: hidden;
+}

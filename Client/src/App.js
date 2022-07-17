@@ -9,6 +9,7 @@ import BlogContent from "./components/BlogContent/BlogContent";
 import "../src/components/Common/CSS/common.css";
 import { useSelector } from "react-redux";
 import Footer from "./components/Footer/Footer";
+import LoginRegister from "./components/login/login&register";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,6 +30,10 @@ function App() {
         ></Route>
 
         <Route path="create" element={<CreatePost />}></Route>
+
+        <Route path="login" element={<LoginRegister />}></Route>
+
+        <Route path="signup" element={<LoginRegister />}></Route>
 
         <Route path="blogContent">
           <Route path=":id" element={<BlogContent />}></Route>

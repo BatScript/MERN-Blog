@@ -19,7 +19,7 @@ function Navbar(props) {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark ${
+      className={`navbar navbar-expand-lg navbar-dark ${styles.nav} ${
         isDark ? "blomo_bg_light" : "blomo_bg_dark"
       }`}
     >

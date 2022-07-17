@@ -30,7 +30,7 @@ const Body = () => {
       alert("kuch to likh de bhai?");
     } else {
       setIsLoading(false);
-      await fetch("https://blomo.herokuapp.com/find/" + searchQuery)
+      await fetch("/find/" + searchQuery)
         .then((res) => {
           return res.json();
         })
@@ -53,7 +53,7 @@ const Body = () => {
     const triggerApi = async () => {
       setIsLoading(false);
       setMessage(false);
-      fetch("https://blomo.herokuapp.com/blogList", {
+      fetch("/blogList", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -81,7 +81,7 @@ const Body = () => {
     setIsLoading(false);
     setMessage(false);
 
-    await fetch("https://blomo.herokuapp.com/category/" + type)
+    await fetch("/category/" + type)
       .then(function (response) {
         return response.json();
       })

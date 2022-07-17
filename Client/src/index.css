@@ -1,7 +1,6 @@
 body {
   margin: 0;
   transition: 200ms;
-  /* overflow: hidden; */
 }
 
 body::-webkit-scrollbar {
@@ -9,8 +8,8 @@ body::-webkit-scrollbar {
 }
 
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 code {
