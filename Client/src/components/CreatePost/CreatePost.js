@@ -1,14 +1,34 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import cpStyles from "./CreatePost.module.css";
 import TagInput from "../UI/Tag-Input/TagInput";
 import axios from "axios";
 import Footer from "../Footer/Footer";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { loginStateActions } from "../../store/loginStateSlice";
 import "../Common/CSS/common.css";
 const CreatePost = (props) => {
+  var dispatch = useDispatch();
   var navigate = useNavigate();
   var isDark = useSelector((state) => state.theme.isDark);
+  var isLoggedIn = useSelector((state) => state.isLoggedIn.isLoggedIn);
+
+
+  //Login Check Logic 
+  const checkState = () => {
+    dispatch(loginStateActions.check());
+  };
+
+  useEffect(() => {
+    checkState();
+
+    if (!isLoggedIn) {
+      console.log(isLoggedIn);
+      navigate("/login");
+    }
+  });
+
+  //useState hooks for input, might use useRefs later
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -19,6 +39,8 @@ const CreatePost = (props) => {
     setTags(tags);
   };
 
+
+  //Form submit handle
   const formSubmitHandler = async (e) => {
     if (e.key === "Enter") {
       e.preventDefault();

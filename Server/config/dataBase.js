@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
+var session = require('express-session');
+var passport = require("passport");
+var passportLocalMongoose = require("passport-local-mongoose");
 var dotenv = require('dotenv');
 const Schema = mongoose.Schema;
 
@@ -20,16 +22,23 @@ const blogSchema = new Schema({
 });
 
 const userSchema = new Schema({
-  firstName: String,
-  lastName: String,
-  email: String,
+  username: String,
   password: String,
-  likedPosts: [String]
+  data: {
+    firstName: String,
+    lastName: String,
+    likedPosts: [String]
+  }
 })
 
-userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose); //Used to hash and salt the passwords & save our users in mongodb
 
 const Blog = connection.model("Blog", blogSchema);
 const User = connection.model("User", userSchema);
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 module.exports = connection;

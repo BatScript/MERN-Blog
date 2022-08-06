@@ -1,0 +1,14 @@
+@keyframes peaceOut {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
+}
+
+.alert {
+  width: 40vh;
+  padding: 10px;
+  animation: peaceOut 200ms;
+}
